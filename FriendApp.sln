@@ -4,6 +4,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FriendApp.UI", "FriendApp.U
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FriendApp.Entities", "FriendApp.Entities\FriendApp.Entities.csproj", "{A5F80B2A-D742-499C-A06E-71D848BD3B49}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FriendApp.BLL", "FriendApp.BLL\FriendApp.BLL.csproj", "{7A5A9EA7-A5F4-4FF5-AFAA-0F98F6A44804}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FriendApp.DAL", "FriendApp.DAL\FriendApp.DAL.csproj", "{129A3334-FE42-40B3-92DD-2108AA57304A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +22,13 @@ Global
 		{A5F80B2A-D742-499C-A06E-71D848BD3B49}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A5F80B2A-D742-499C-A06E-71D848BD3B49}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A5F80B2A-D742-499C-A06E-71D848BD3B49}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A5A9EA7-A5F4-4FF5-AFAA-0F98F6A44804}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A5A9EA7-A5F4-4FF5-AFAA-0F98F6A44804}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A5A9EA7-A5F4-4FF5-AFAA-0F98F6A44804}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A5A9EA7-A5F4-4FF5-AFAA-0F98F6A44804}.Release|Any CPU.Build.0 = Release|Any CPU
+		{129A3334-FE42-40B3-92DD-2108AA57304A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{129A3334-FE42-40B3-92DD-2108AA57304A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{129A3334-FE42-40B3-92DD-2108AA57304A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{129A3334-FE42-40B3-92DD-2108AA57304A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
