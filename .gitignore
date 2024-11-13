@@ -1,0 +1,199 @@
+# Visual Studio, rider файлы
+.vs/
+*.user
+*.suo
+*.cache
+*.csproj.user
+*.sln.docstates
+
+# Сборки и временные файлы
+bin/
+obj/
+Debug/
+Release/
+build/
+bld/
+*.dll
+*.exe
+*.pdb
+*.mdb
+*.log
+*.pidb
+*.cache
+*.ilk
+*.aps
+*.ncb
+*.opendb
+*.tmp
+*.tmp_proj
+*.pch
+*.idb
+
+# Файлы пакетов NuGet
+*.nupkg
+packages/
+package-lock.json
+project.lock.json
+
+# Файлы конфигурации IIS
+*.vspscc
+*.vssscc
+[Ii][Ll][Bb]/Debug/
+[Ii][Ll][Bb]/Release/
+_ReSharper*
+
+# Файлы настройки пользователя
+*.userprefs
+*.userosscache
+
+# Файлы публикации
+.publishxml
+*.Publish.xml
+
+# Файлы кэша
+*.cache
+**/node_modules/
+
+# Конфигурационные файлы IDE
+*.ide
+.idea/
+*.sln.iml
+
+# Файлы тестирования
+TestResults/
+*.trx
+*.coverage
+*.coveragexml
+
+# Файлы отчетов
+*.report.json
+coverage/
+coverage.info
+lcov-report/
+
+# Файлы среды разработки
+.vscode/
+*.code-workspace
+
+# Файлы настройки StyleCop
+StyleCop.Cache
+
+# Файлы настроек JetBrains Rider и ReSharper
+*.DotSettings.user
+_ReSharper.Caches/
+
+# Файлы системы
+.DS_Store
+Thumbs.db
+ehthumbs.db
+desktop.ini
+$RECYCLE.BIN/
+
+# Файлы временных данных
+*.tmp
+*.bak
+
+# Файлы конфигурации Mac
+*.DS_Store
+
+# Файлы конфигурации Linux
+*~
+
+# Файлы логов
+*.log
+
+# Файлы баз данных
+*.mdf
+*.ldf
+*.ndf
+
+# Файлы протоколов и отчетов
+*.wrn
+*.err
+*.log
+
+# Файлы сборки Azure
+csx/
+*.build.csdef
+
+# Файлы публикации ClickOnce
+publish/
+
+# Файлы NCrunch
+**/*_ncrunch_*/
+**/*_NCrunch_*/
+.*crunch*.local.xml
+
+# Файлы локального запуска Azure Stream Analytics
+ASALocalRun/
+
+# Cake build directories
+Tools/
+
+# Файлы рабочих процессов
+*.workflow
+
+# Файлы настроек Entity Framework
+*.edmx*
+*.tt
+
+# Файлы кэша пакетов
+*.nuget/
+
+# Файлы конфигурации npm
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Файлы конфигурации Angular
+.angular/cache/
+
+# Файлы настроек Docker
+**/[Dd]ocker*
+
+# Файлы настроек Kubernetes
+**/*.kube
+
+# Файлы настроек сертификатов
+**/*.pfx
+**/*.snk
+
+# Файлы конфигурации сервера
+appsettings*.json
+
+# Файлы локальных настроек пользователя
+*.local.settings.json
+
+# Файлы настроек Swashbuckle
+swagger-ui/
+
+# Локальные настройки Azure Functions
+local.settings.json
+
+# Файлы настроек TFS
+tf.exe.cache/
+
+# Файлы настроек SonarQube
+.sonarqube/
+
+# Файлы миграции базы данных
+Migrations/
+
+# Файлы отчетов Code Analysis
+CodeAnalysisLog.xml
+
+# Файлы отчетов Roslyn
+*.Designer.cs
+
+# Файлы отчетов FxCop
+fxcoplog.xml
+
+# Файлы отчетов StyleCop
+stylecopviolations.xml
+
+# Файлы настроек Python
+*.pyc
+__pycache__/
+
+# Файлы настроек Java
+*.class
