@@ -1,11 +1,11 @@
-﻿using FriendApp.DAL.interfaces;
+﻿using FriendApp.DAL.Interfaces;
 using FriendApp.Entities.Models;
 
 namespace FriendApp.DAL.Repositories;
 
 public class FriendRepository : IFriendRepository
 {
-    private static List<Friend> _friends =
+    private static readonly List<Friend> Friends =
     [
         new() { FriendID = 1, FriendName = "John Doe", Place = "New York" },
         new() { FriendID = 2, FriendName = "Jane Smith", Place = "Los Angeles" },
@@ -13,28 +13,42 @@ public class FriendRepository : IFriendRepository
         new() { FriendID = 4, FriendName = "Bob Brown", Place = "San Francisco" }
     ];
 
-    public List<Friend> GetAll()
-    {
-        return _friends;
-    }
+    public List<Friend> GetAll() => Friends.OrderBy(f => f.FriendID).ToList();
+
+    public Friend? GetById(int friendId) => Friends.FirstOrDefault(f => f.FriendID == friendId);
 
     public void Add(Friend friend)
     {
-        throw new NotImplementedException();
+        friend.FriendID = Friends.Count != 0 ? Friends.Max(f => f.FriendID) + 1 : 1;
+        Friends.Add(friend);
     }
 
-    public void Update(Friend friend)
+    public void Update(Friend? friend)
     {
-        throw new NotImplementedException();
+        var existingFriend = GetById(friend.FriendID);
+        if (existingFriend is not null)
+        {
+            existingFriend.FriendName = friend.FriendName;
+            existingFriend.Place = friend.Place;
+        }
     }
 
     public void Delete(int friendId)
     {
-        throw new NotImplementedException();
+        var friend = GetById(friendId);
+        if (friend is not null)
+        {
+            Friends.Remove(friend);
+            RenumberFriendIDs();
+        }
     }
 
-    public Friend GetById(int friendId)
+    private void RenumberFriendIDs()
     {
-        throw new NotImplementedException();
+        var newId = 1;
+        foreach (var friend in Friends.OrderBy(f => f.FriendID))
+        {
+            friend.FriendID = newId++;
+        }
     }
 }

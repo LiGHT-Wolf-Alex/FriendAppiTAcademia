@@ -5,7 +5,8 @@ namespace FriendApp.Entities.Models;
 public class Friend
 {
     public int FriendID { get; set; }
-
+    
+    [Required(ErrorMessage = "Имя обязательно")]
     [StringLength(40, ErrorMessage = "Имя должно быть не более 40 символов")]
     public required string FriendName { get; set; }
 

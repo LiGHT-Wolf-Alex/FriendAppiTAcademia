@@ -7,6 +7,7 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\FriendApp.DAL\FriendApp.DAL.csproj" />
       <ProjectReference Include="..\FriendApp.Entities\FriendApp.Entities.csproj" />
     </ItemGroup>
 
