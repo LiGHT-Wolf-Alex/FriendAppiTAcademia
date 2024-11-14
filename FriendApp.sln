@@ -8,6 +8,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FriendApp.BLL", "FriendApp.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FriendApp.DAL", "FriendApp.DAL\FriendApp.DAL.csproj", "{129A3334-FE42-40B3-92DD-2108AA57304A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FriendApp.Tests", "FriendApp.Tests\FriendApp.Tests.csproj", "{DE8692D5-CDF4-47D2-9CCC-80273EF4A0D4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +32,9 @@ Global
 		{129A3334-FE42-40B3-92DD-2108AA57304A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{129A3334-FE42-40B3-92DD-2108AA57304A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{129A3334-FE42-40B3-92DD-2108AA57304A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE8692D5-CDF4-47D2-9CCC-80273EF4A0D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE8692D5-CDF4-47D2-9CCC-80273EF4A0D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE8692D5-CDF4-47D2-9CCC-80273EF4A0D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE8692D5-CDF4-47D2-9CCC-80273EF4A0D4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
