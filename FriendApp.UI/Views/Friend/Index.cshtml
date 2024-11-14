@@ -1,0 +1,111 @@
+@model IEnumerable<FriendApp.Entities.Models.Friend>
+
+@{
+    ViewData["Title"] = "Список Друзей";
+}
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+<style>
+    body {
+        background-color: #e9ecef;
+        font-family: 'Roboto', sans-serif;
+        margin-top: 0; /* Убираем отступ сверху */
+    }
+    h1 {
+        color: #343a40;
+        font-weight: 700;
+        margin-top: 20px;
+    }
+    .table th, .table td {
+        vertical-align: middle;
+    }
+    .btn-custom {
+        border-radius: 50px;
+    }
+    .search-bar {
+        border-radius: 50px;
+        padding-left: 20px;
+    }
+    .container {
+        max-width: 1200px;
+    }
+</style>
+
+<div class="container my-4">
+    <h1 class="mb-4 text-center">@ViewData["Title"]</h1>
+
+    <div class="d-flex justify-content-end mb-3">
+        <a asp-action="Create" class="btn btn-success btn-custom">
+            <i class="bi bi-plus-circle me-2"></i> Добавить Друга
+        </a>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col-md-6 offset-md-3">
+            <input type="text" id="searchInput" class="form-control search-bar" placeholder="Поиск друзей...">
+        </div>
+    </div>
+
+    <div class="table-responsive shadow-sm">
+        <table class="table table-hover table-bordered align-middle bg-white">
+            <thead class="table-dark">
+            <tr>
+                <th>#ID</th>
+                <th>Имя</th>
+                <th>Место</th>
+                <th class="text-center">Действия</th>
+            </tr>
+            </thead>
+            <tbody id="friendsTable">
+            @foreach (var friend in Model)
+            {
+                <tr>
+                    <td>@friend.FriendID</td>
+                    <td>@friend.FriendName</td>
+                    <td>@friend.Place</td>
+                    <td class="text-center">
+                        <!-- Кнопка Edit -->
+                        <a asp-action="Edit"
+                           asp-route-id="@friend.FriendID"
+                           class="btn btn-primary btn-custom me-2"
+                           title="Редактировать">
+                            <i class="bi bi-pencil-square"></i> Редактировать
+                        </a>
+
+                        <!-- Кнопка Delete -->
+                        <a asp-action="Delete"
+                           asp-route-id="@friend.FriendID"
+                           class="btn btn-danger btn-custom"
+                           title="Удалить">
+                            <i class="bi bi-trash"></i> Удалить
+                        </a>
+                    </td>
+                </tr>
+            }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    document.getElementById('searchInput').addEventListener('input', function () {
+        const filter = this.value.toLowerCase();
+        const rows = document.querySelectorAll('#friendsTable tr');
+
+        rows.forEach(row => {
+            const name = row.cells[1].textContent.toLowerCase();
+            const place = row.cells[2].textContent.toLowerCase();
+            if (name.includes(filter) || place.includes(filter)) {
+                row.style.display = '';
+            } else {
+                row.style.display = 'none';
+            }
+        });
+    });
+</script>

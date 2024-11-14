@@ -1,0 +1,57 @@
+@model FriendApp.Entities.Models.Friend
+
+@{
+    ViewData["Title"] = "Добавить Друга";
+}
+
+<div class="container my-5">
+    <h2 class="mb-4 text-center">@ViewData["Title"]</h2>
+
+    <form asp-action="Create" method="post" class="needs-validation" novalidate>
+        <div class="form-group mb-3">
+            <label asp-for="FriendName" class="form-label"></label>
+            <input asp-for="FriendName" class="form-control" required/>
+            <div class="invalid-feedback">
+                Пожалуйста, введите имя друга.
+            </div>
+            <span asp-validation-for="FriendName" class="text-danger"></span>
+        </div>
+        <div class="form-group mb-4">
+            <label asp-for="Place" class="form-label"></label>
+            <input asp-for="Place" class="form-control" required/>
+            <div class="invalid-feedback">
+                Пожалуйста, введите место.
+            </div>
+            <span asp-validation-for="Place" class="text-danger"></span>
+        </div>
+        <div class="d-flex justify-content-between">
+            <a asp-action="Index" class="btn btn-secondary btn-custom">
+                <i class="bi bi-arrow-left-circle me-2"></i> Назад к списку
+            </a>
+            <button type="submit" class="btn btn-success btn-custom">
+                <i class="bi bi-check-circle me-2"></i> Сохранить
+            </button>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+    <script>
+        (function () {
+            'use strict';
+            window.addEventListener('load', function () {
+                var forms = document.getElementsByClassName('needs-validation');
+                Array.prototype.filter.call(forms, function (form) {
+                    form.addEventListener('submit', function (event) {
+                        if (form.checkValidity() === false) {
+                            event.preventDefault();
+                            event.stopPropagation();
+                        }
+                        form.classList.add('was-validated');
+                    }, false);
+                });
+            }, false);
+        })();
+    </script>
+}

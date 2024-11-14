@@ -1,0 +1,35 @@
+@model FriendApp.Entities.Models.Friend
+
+@{
+    ViewData["Title"] = "Удалить Друга";
+}
+
+<div class="container my-5">
+    <h2 class="mb-4 text-center text-danger">@ViewData["Title"]</h2>
+
+    <div class="alert alert-warning" role="alert">
+        <h4 class="alert-heading">Вы действительно хотите удалить этого друга?</h4>
+        <p>Это действие необратимо.</p>
+        <hr/>
+        <dl class="row mb-4">
+            <dt class="col-sm-3">ID Друга</dt>
+            <dd class="col-sm-9">@Model.FriendID</dd>
+            <dt class="col-sm-3">Имя Друга</dt>
+            <dd class="col-sm-9">@Model.FriendName</dd>
+            <dt class="col-sm-3">Место</dt>
+            <dd class="col-sm-9">@Model.Place</dd>
+        </dl>
+        <form asp-action="ConfirmDelete" method="post" class="d-flex justify-content-between">
+            @Html.AntiForgeryToken()
+            <input type="hidden" name="id" value="@Model.FriendID"/>
+            <a asp-action="Index" class="btn btn-secondary btn-custom">
+                <i class="bi bi-arrow-left-circle me-2"></i> Отмена
+            </a>
+            <button type="submit" class="btn btn-danger btn-custom">
+                <i class="bi bi-trash me-2"></i> Удалить друга с ID @Model.FriendID
+            </button>
+        </form>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
